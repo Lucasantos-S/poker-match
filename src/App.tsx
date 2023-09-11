@@ -1,9 +1,13 @@
 import React from "react";
-
+import MobileProfile from "./components/MobileProfile";
+import { BrowserRouter as Router } from "react-router-dom";
+import Routes from "./Routes";
 export default function App() {
   return (
-    <div>
-      <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem impedit vero accusamus incidunt quae doloribus odit alias aut maiores consequatur. Numquam minus rerum error ipsa iure, quae facilis doloremque eligendi?</h1>
+    <div className="overflow-y-hidden min-w-[800px]">
+      <Router>
+        <Routes />
+      </Router>
     </div>
   );
 }
