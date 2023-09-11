@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "@/Routes";
 export default function App() {
   return (
-    <div className="overflow-y-hidden min-w-[800px]">
+    <div className="w-screen h-screen">
       <Router>
         <Routes />
       </Router>
