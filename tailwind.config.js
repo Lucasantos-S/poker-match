@@ -30,6 +30,35 @@ module.exports = {
         "gray-10": "#F4F4F4",
         "gray-0": "#FFFFFF",
       },
+      keyframes: {
+        transferAnime: {
+          "0%": { transform: "translateY(-50px) translate(100px) scaleY(0.4)" },
+          "50%": { transform: "translateY(0) translate(-10px)" },
+          "100%": { transform: "origin:100% 0%" },
+        },
+        left: {
+          from: {
+            opacity: "0",
+            transform: "translate(-5px)",
+            animation: "animeLeft 0.6s forwards",
+          },
+          to: { opacity: "1", transform: "initial" },
+        },
+        top: {
+          from: {
+            opacity: "0",
+            transform: "translateY(-5px)",
+            animation: "animeLeft 0.6s forwards",
+          },
+          to: { opacity: "1", transform: "initial" },
+        },
+      },
+      animation: {
+        left: "left 0.6s forwards",
+        form: "left 2s forwards",
+        top: "top 0.3s forwards",
+        modalOpenCenter: "modalOpenCenter 0.3s forwards ",
+      },
     },
   },
   plugins: [],
