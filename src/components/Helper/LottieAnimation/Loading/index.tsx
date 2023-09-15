@@ -1,14 +1,14 @@
 import React from "react";
 import { useLottie } from "lottie-react";
-import searchNotFound from "@/components/Helper/LottieAnimation/SearchNotFound/search-not-found.json";
+import loading from "@/components/Helper/LottieAnimation/Loading/loading.json";
 
 const style = {
-  height: "80%",
+  height: "30%",
 };
 
-export default function SearchNotFound() {
+export default function Loading() {
   const options = {
-    animationData: searchNotFound,
+    animationData: loading,
     loop: true,
     autoplay: true,
   };

@@ -4,7 +4,7 @@ import Routes from "@/Routes";
 import { PokemonContextProvider } from "./context/PokemonContext";
 export default function App() {
   return (
-    <div className="w-screen h-screen">
+    <div className="w-screen h-screen overflow-hidden">
       <PokemonContextProvider>
         <Router>
           <Routes />

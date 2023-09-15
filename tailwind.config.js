@@ -20,6 +20,8 @@ module.exports = {
         error: "#DA1E28",
         "error-light": "#E9787E",
 
+        fire: "#FF9D55",
+
         "gray-65": "#161616d3",
         "gray-60": "#161616",
         "gray-55": "#222222",
@@ -52,12 +54,16 @@ module.exports = {
           },
           to: { opacity: "1", transform: "initial" },
         },
+        modalOpenCenter: {
+          "0%": { transform: "scale(0.5)" },
+          "100%": { transform: "scale(1)" },
+        },
       },
       animation: {
         left: "left 0.6s forwards",
         form: "left 2s forwards",
         top: "top 0.3s forwards",
-        modalOpenCenter: "modalOpenCenter 0.3s forwards ",
+        modalOpenCenter: "modalOpenCenter 0.6s forwards ",
       },
     },
   },

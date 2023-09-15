@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  IPokedex,
   IPokemonContextProps,
   IpokemonContext,
 } from "./pokemonContext.structure";
@@ -9,13 +10,37 @@ const PokemonContext = React.createContext({} as IpokemonContext);
 
 function PokemonContextProvider({ children }: IPokemonContextProps) {
   const [pokemon, setPokemon] = React.useState({} as IPokemon | null);
-  const [pokedex, setPokedex] = React.useState([] as IPokemon[]);
+  const [pokedex, setPokedex] = React.useState([] as IPokedex[]);
 
-  function handlePokerMatch() {
-    setPokedex((pokemonMatch) => [...pokemonMatch, pokemon as IPokemon]);
-  }
+  const handlePokedexMetch = React.useCallback(() => {
+    if (pokemon) {
+      setPokedex((teste) => [
+        ...teste,
+        { pokemon: pokemon as IPokemon, match: true },
+      ]);
+    }
+  }, [pokemon, setPokedex]);
+
+  const handlePokedexNotMetch = React.useCallback(() => {
+    if (pokemon) {
+      setPokedex((teste) => [
+        ...teste,
+        { pokemon: pokemon as IPokemon, notMatch: true },
+      ]);
+    }
+  }, [pokemon, setPokedex]);
+  
   return (
-    <PokemonContext.Provider value={{ pokedex, setPokedex }}>
+    <PokemonContext.Provider
+      value={{
+        pokemon,
+        pokedex,
+        setPokemon,
+        setPokedex,
+        handlePokedexMetch,
+        handlePokedexNotMetch,
+      }}
+    >
       {children}
     </PokemonContext.Provider>
   );
