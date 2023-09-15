@@ -1,23 +1,31 @@
+import EnvironmentPokedex from "@/components/EnvironmentPokedex";
+import PokedexMetchList from "@/components/PokedexMetchList";
+import PokedexNotMetchList from "@/components/PokedexNotMetchList";
 import { usePokemon } from "@/context/PokemonContext";
 import React from "react";
+import { IHashSteps, StepsType } from "./Pokedex.Structure";
 
 export default function Pokedex() {
+  const [environment, setEnvironment] = React.useState(
+    "environment_metch " as StepsType
+  );
   const { pokedex } = usePokemon();
+
+  function handleChangeEnvironment(environment: StepsType) {
+    setEnvironment(environment);
+  }
+
+  const stepPokedex: IHashSteps = {
+    environment_metch: <PokedexMetchList />,
+    environment_notMetch: <PokedexNotMetchList />,
+  };
   return (
-    <div className="flex w-full max-h-[200px]">
-      {pokedex?.map((pokedex) => {
-        const tag = pokedex.match ? "Match" : "NotMatch";
-        return (
-          <div className="flex flex-col items-center justify-center min-w-[100px] min-h-[100px]">
-            <img
-              className="w-full h-full animate-left"
-              src={pokedex?.pokemon?.sprites?.other.dream_world.front_default}
-              alt=""
-            />
-            <p>{tag}</p>
-          </div>
-        );
-      })}
-    </div>
+    <aside className="flex flex-col gap-5 w-3/5 z-50">
+      <EnvironmentPokedex
+        environment={environment}
+        handleChangeEnvironment={handleChangeEnvironment}
+      />
+      {stepPokedex[environment]}
+    </aside>
   );
 }

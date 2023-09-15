@@ -12,7 +12,7 @@ export default function Home() {
   const { pokedex } = usePokemon();
 
   return (
-    <div className="flex items-center justify-center w-screen h-screen relative bg-gradient-to-r from-linear-1 from-10% via-linear-2 via-30% to-linear-3 to-90%">
+    <div className="flex justify-center w-screen h-screen relative bg-gradient-to-r from-linear-1 from-10% via-linear-2 via-30% to-linear-3 to-90% py-10">
       <Outlet />
       <div className="absolute top-5 left-5 z-50">
         <SideMenu />
