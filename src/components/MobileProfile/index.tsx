@@ -5,6 +5,8 @@ import React from "react";
 import Stats from "../Stats";
 import Loading from "../Helper/LottieAnimation/Loading";
 import pokeball from "@/assets/Pokeball.svg";
+import PokemonImage from "../PokemonImage";
+import PokemonName from "../PokemonName";
 
 export default function MobileProfile() {
   const [refresh, setRefresh] = React.useState(false as boolean);
@@ -38,45 +40,18 @@ export default function MobileProfile() {
             <Loading />
           </div>
         ) : (
-          pokemon && (
-            <div
-              className={`flex flex-col items-center justify-between w-full h-full  bg-gray-10 rounded-md p-4 shadow-2xl shadow-gray-55 animate-modalOpenCenter overflow-hidden`}
-            >
-              <div className="w-[150px] h-[150px] mt-2 flex items-center justify-center rounded-full relative z-50 animate-modalOpenCenter">
-                <img
-                  className="w-full h-full z-50 "
-                  src={pokemon?.sprites?.other.dream_world.front_default}
-                  alt=""
-                />
-                <div
-                  className="w-[150px] h-[150px] rounded-full shadow-lg absolute z-10 opacity-70"
-                  style={{
-                    background: types[handleTypes as SupportedTypes]?.color,
-                  }}
-                ></div>
-                <div className="w-[150px] h-[150px] bg-gray-0 rounded-full shadow-lg absolute z-0 opacity-70"></div>
-              </div>
-              {pokemon.stats && (
-                <Stats stats={pokemon.stats} type={pokemon.types} />
-              )}
-
-              <div className="w-full z-50">
-                <span className="text-sm text-gray-30 font-semibold">
-                  #{pokemon?.id && formatId(pokemon?.id.toString())}
-                </span>
-                <h1 className="text-lg text-gray-50 font-bold">
-                  {pokemon?.name &&
-                    pokemon?.name.charAt(0).toLocaleUpperCase() +
-                      pokemon?.name.slice(1)}
-                </h1>
-              </div>
-              <div className="absolute z-0 bottom-5 -left-10 opacity-20">
-                <img className="z-0" src={pokeball} alt="" />
-              </div>
+          <div
+            className={`flex flex-col items-center justify-between w-full h-full  bg-gray-10 rounded-md p-4 shadow-2xl shadow-gray-55 animate-modalOpenCenter overflow-hidden`}
+          >
+            <PokemonImage />
+            <Stats />
+            <PokemonName />
+            <div className="absolute z-0 bottom-5 -left-10 opacity-20">
+              <img className="z-0" src={pokeball} alt="" />
             </div>
-          )
+          </div>
         )}
-        <span className="bg-gray-20 w-3 h-3 absolute rounded-full left-1 top-28"></span>
+        <span className="bg-gray-20 w-3 h-3 absolute rounded-full left-1 top-48"></span>
       </section>
       <section className="flex justify-between px-5 pt-2">
         <div className="w-20 h-20  relative"></div>
