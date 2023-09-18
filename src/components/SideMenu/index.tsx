@@ -38,6 +38,16 @@ export default function SideMenu() {
                 Pokedex
               </Link>
             </li>
+            <li className="w-full text-sm text-gray-0">
+              <Link
+                onClick={() => {
+                  setIsMenuOpen(false);
+                }}
+                to={"/"}
+              >
+                Sair
+              </Link>
+            </li>
           </ul>
         </div>
       )}

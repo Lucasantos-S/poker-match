@@ -13,13 +13,13 @@ export default function EnvironmentPokedex({
     <nav className="flex justify-items-start w-[300px] mt-5 relative">
       <div className="flex gap-11">
         <EnvironmentItem
-          title="Seus pokemons"
+          title="Meus pokemons"
           environment={environment}
           step={"environment_metch"}
           handleChangeEnvironment={handleChangeEnvironment}
         />
         <EnvironmentItem
-          title="Pokemons rejeitados"
+          title="Outros"
           environment={environment}
           step={"environment_notMetch"}
           handleChangeEnvironment={handleChangeEnvironment}

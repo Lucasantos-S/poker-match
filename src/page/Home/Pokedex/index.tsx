@@ -4,23 +4,26 @@ import PokedexNotMetchList from "@/components/PokedexNotMetchList";
 import { usePokemon } from "@/context/PokemonContext";
 import React from "react";
 import { IHashSteps, StepsType } from "./Pokedex.Structure";
+import Icons from "@/assets/icons";
 
 export default function Pokedex() {
   const [environment, setEnvironment] = React.useState(
-    "environment_metch " as StepsType
+    "environment_metch" as StepsType
   );
-  const { pokedex } = usePokemon();
 
-  function handleChangeEnvironment(environment: StepsType) {
-    setEnvironment(environment);
-  }
+  const handleChangeEnvironment = React.useCallback(
+    (environment: StepsType) => {
+      setEnvironment(environment);
+    },
+    [environment]
+  );
 
   const stepPokedex: IHashSteps = {
     environment_metch: <PokedexMetchList />,
     environment_notMetch: <PokedexNotMetchList />,
   };
   return (
-    <aside className="flex flex-col gap-5 w-3/5 z-50">
+    <aside className="flex flex-col gap-5 w-full sm:w-3/5 z-50 px-4">
       <EnvironmentPokedex
         environment={environment}
         handleChangeEnvironment={handleChangeEnvironment}

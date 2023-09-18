@@ -21,10 +21,10 @@ export default function EnvironmentItem({
       }`}
     >
       <span
-        className={`text-sm font-semibold ml-2 ${
-          environmentIsMobile
-            ? "text-secondary-dark ease-in-out transition-all duration-700"
-            : " text-gray-40 dark:text-gray-10"
+        className={`text-base font-semibold ml-2 ${
+          environment === step
+            ? "text-gray-0 ease-in-out transition-all duration-700"
+            : " text-gray-50"
         }`}
       >
         {title}

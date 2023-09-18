@@ -21,10 +21,17 @@ export default function LoginForm() {
 
   const { email, password } = watch();
 
+  const buttonIsDisabled = !email || !password;
+
+
   const navigate = useNavigate();
 
+  const userEmail = "teste@teste.com";
+  const userPassword = "teste";
+
   const onSubmit = (data: FormValues) => {
-    console.log(data);
+    if (data.email === userEmail && data.password === userPassword)
+      navigate("/home");
   };
   return (
     <form
@@ -67,7 +74,7 @@ export default function LoginForm() {
           </span>
         </main>
         <footer className="w-[300px] mt-5">
-          <PrimaryButton>Fazer Login</PrimaryButton>
+          <PrimaryButton disabled={buttonIsDisabled}>Fazer Login</PrimaryButton>
         </footer>
       </section>
     </form>

@@ -1,6 +1,5 @@
 import { usePokemon } from "@/context/PokemonContext";
 import Pokemon from "@/services/Pokemon";
-import { SupportedTypes, formatId, types } from "@/utils/inedex";
 import React from "react";
 import Stats from "../Stats";
 import Loading from "../Helper/LottieAnimation/Loading";
@@ -25,8 +24,6 @@ export default function MobileProfile() {
       setLoading(false);
     }, 1000);
   }, []);
-
-  const handleTypes = pokemon?.types && pokemon?.types[0]?.type.name;
 
   React.useEffect(() => {
     getPokemon();
