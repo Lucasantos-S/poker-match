@@ -1,6 +1,6 @@
 import React from "react";
 import { usePokemon } from "@/context/PokemonContext";
-import { SupportedTypes, types } from "@/utils/inedex";
+import { SupportedTypes, types } from "@/utils";
 
 export default function PokemonImage() {
   const { pokemon } = usePokemon();

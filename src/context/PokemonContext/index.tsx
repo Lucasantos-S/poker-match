@@ -14,8 +14,8 @@ function PokemonContextProvider({ children }: IPokemonContextProps) {
 
   const handlePokedexMetch = React.useCallback(() => {
     if (pokemon) {
-      setPokedex((teste) => [
-        ...teste,
+      setPokedex((pokemons) => [
+        ...pokemons,
         { pokemon: pokemon as IPokemon, match: true },
       ]);
     }
@@ -23,13 +23,27 @@ function PokemonContextProvider({ children }: IPokemonContextProps) {
 
   const handlePokedexNotMetch = React.useCallback(() => {
     if (pokemon) {
-      setPokedex((teste) => [
-        ...teste,
+      setPokedex((pokemons) => [
+        ...pokemons,
         { pokemon: pokemon as IPokemon, notMatch: true },
       ]);
     }
   }, [pokemon, setPokedex]);
-  
+
+  function removeMetchFromPokemon(pokemonId: number) {
+    setPokedex((prevPokedex) => {
+      return prevPokedex.map((pokemon) => {
+        if (pokemon.pokemon && pokemon.pokemon.id === pokemonId) {
+          return {
+            ...pokemon,
+            match: null,
+          };
+        }
+        return pokemon;
+      });
+    });
+  }
+
   return (
     <PokemonContext.Provider
       value={{
@@ -39,6 +53,7 @@ function PokemonContextProvider({ children }: IPokemonContextProps) {
         setPokedex,
         handlePokedexMetch,
         handlePokedexNotMetch,
+        removeMetchFromPokemon,
       }}
     >
       {children}

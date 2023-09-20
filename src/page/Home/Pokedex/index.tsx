@@ -1,6 +1,6 @@
 import EnvironmentPokedex from "@/components/EnvironmentPokedex";
-import PokedexMetchList from "@/components/PokedexMetchList";
-import PokedexNotMetchList from "@/components/PokedexNotMetchList";
+import PokedexMatchList from "@/components/PokedexMatchList";
+import PokedexNotMatchList from "@/components/PokedexNotMatchList";
 import { usePokemon } from "@/context/PokemonContext";
 import React from "react";
 import { IHashSteps, StepsType } from "./Pokedex.Structure";
@@ -19,8 +19,8 @@ export default function Pokedex() {
   );
 
   const stepPokedex: IHashSteps = {
-    environment_metch: <PokedexMetchList />,
-    environment_notMetch: <PokedexNotMetchList />,
+    environment_metch: <PokedexMatchList />,
+    environment_notMetch: <PokedexNotMatchList />,
   };
   return (
     <aside className="flex flex-col gap-5 w-full sm:w-3/5 z-50 px-4">

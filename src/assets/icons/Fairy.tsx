@@ -4,8 +4,8 @@ import { IProps } from "./Icons.structure";
 export default function Fairy({ size, color }: IProps) {
   return (
     <svg
-      width={size}
-      height={size}
+      width={size + 10}
+      height={size + 10}
       viewBox="0 0 144 145"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -7,6 +7,7 @@ export interface IpokemonContext {
   setPokedex: React.Dispatch<React.SetStateAction<IPokedex[]>>;
   handlePokedexMetch: () => void;
   handlePokedexNotMetch: () => void;
+  removeMetchFromPokemon: (pokemonId: number) => void;
 }
 
 export interface IPokemonContextProps {

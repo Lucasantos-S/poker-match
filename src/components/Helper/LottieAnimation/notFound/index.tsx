@@ -1,17 +1,17 @@
 import React from "react";
 import { useLottie } from "lottie-react";
-import successAnimeJson from "@/components/Helper/LottieAnimation/Success/success-Animation.json";
+import notFound from "@/components/Helper/LottieAnimation/notFound/NotFound.json";
 
 interface ISuccessAnimationProps {
   size?: string;
 }
-export default function SuccessAnimation({ size }: ISuccessAnimationProps) {
+export default function NotFound({ size }: ISuccessAnimationProps) {
   const style = {
-    height: size ? size : "300px",
+    height: "80%",
   };
 
   const options = {
-    animationData: successAnimeJson,
+    animationData: notFound,
     loop: true,
     autoplay: true,
   };

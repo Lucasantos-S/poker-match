@@ -36,7 +36,8 @@ export interface IIcons {
   dark: JSX.Element;
   steel: JSX.Element;
   rock: JSX.Element;
-  psychic: JSX.Element
-  ground: JSX.Element
-poison:JSX.Element;
+  psychic: JSX.Element;
+  ground: JSX.Element;
+  poison: JSX.Element;
+  flying: JSX.Element;
 }

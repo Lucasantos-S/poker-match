@@ -1,10 +1,8 @@
 import React from "react";
 import person from "@/assets/person.svg";
 import pokeball from "@/assets/Pokeball.svg";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import SideMenu from "@/components/SideMenu";
-import Icons from "@/assets/icons";
-import fire from "@/assets/icons/Vector (21).svg";
 
 export default function Home() {
   return (
@@ -19,6 +17,7 @@ export default function Home() {
       <div className="h-full left-0 absolute z-0">
         <img className="w-full h-full" src={pokeball} alt="" />
       </div>
+      {/* <div className="w-80 h-52 bg-white absolute z-50 rounded-xl shadow-lg top-4 animate-top"></div> */}
     </div>
   );
 }

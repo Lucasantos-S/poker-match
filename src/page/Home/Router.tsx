@@ -1,6 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import MobileProfile from "@/components/MobileProfile";
+import MobileProfile from "@/page/Home/GameProfile";
 import Pokedex from "./Pokedex";
 
 const pokemonRoutes = [

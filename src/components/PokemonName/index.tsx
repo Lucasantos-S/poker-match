@@ -1,12 +1,15 @@
 import React from "react";
 import { usePokemon } from "@/context/PokemonContext";
-import { SupportedTypes, formatId, types } from "@/utils/inedex";
+import { SupportedTypes, formatId, types } from "@/utils";
 import Icons from "@/assets/icons";
 import { IIconProps, IIcons } from "@/assets/icons/Icons.structure";
+import PokemonTypeIcon from "../PokemonTypeIcon";
+import { IPokemon } from "pokeapi-typescript";
 
 export default function PokemonName() {
   const { pokemon } = usePokemon();
-  const handleTypes = pokemon?.types && pokemon?.types[0]?.type.name;
+  const handleTypesFirts = pokemon?.types && pokemon?.types[0]?.type.name;
+  const handleTypesSecond = pokemon?.types && pokemon?.types[1]?.type.name;
   return (
     <div className="w-full flex justify-between z-50">
       <div>
@@ -19,22 +22,16 @@ export default function PokemonName() {
               pokemon?.name.slice(1)}
         </h1>
       </div>
-      <div className="w-10 h-10 flex items-center justify-center relative">
-        <span className="z-50">
-          {handleTypes && (
-            <Icons
-              name={pokemon?.types[0].type.name as keyof IIcons}
-              size={15}
-            />
-          )}
-        </span>
+      <div className="h-full flex gap-2 items-center justify-center">
+        <PokemonTypeIcon
+          name={handleTypesFirts as string}
+          handleType={handleTypesFirts as SupportedTypes}
+        />
 
-        <span
-          style={{
-            background: types[handleTypes as SupportedTypes]?.color,
-          }}
-          className="w-10 h-10 absolute z-0 opacity-40 rounded-full"
-        ></span>
+        <PokemonTypeIcon
+          name={handleTypesSecond as string}
+          handleType={handleTypesSecond as SupportedTypes}
+        />
       </div>
     </div>
   );

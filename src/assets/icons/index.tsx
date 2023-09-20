@@ -22,6 +22,7 @@ import Rock from "./Rock";
 import Psychic from "./Psychic";
 import Ground from "./Ground";
 import Poison from "./Poison";
+import Flying from "./Flying";
 
 /**
  * @description Component to render all svg icons
@@ -63,6 +64,7 @@ export default function Icons({ size, color, name, onClick }: IIconProps) {
     psychic: <Psychic {...iconsProps} />,
     ground: <Ground {...iconsProps} />,
     poison: <Poison {...iconsProps} />,
+    flying: <Flying {...iconsProps} />,
   };
 
   return iconsHashmap[name as keyof typeof iconsHashmap] || null;

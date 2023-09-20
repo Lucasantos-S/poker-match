@@ -1,6 +1,6 @@
 import React from "react";
 import { IStatsProps } from "./Stats.structure";
-import { SupportedTypes, types } from "@/utils/inedex";
+import { SupportedTypes, types } from "@/utils";
 import { usePokemon } from "@/context/PokemonContext";
 
 export default function Stats() {
