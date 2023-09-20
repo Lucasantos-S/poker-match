@@ -1,9 +1,19 @@
 import React from "react";
-
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import { BrowserRouter as Router } from "react-router-dom";
+import Routes from "@/Routes";
+import { PokemonContextProvider } from "./context/PokemonContext";
 export default function App() {
   return (
-    <div>
-      <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem impedit vero accusamus incidunt quae doloribus odit alias aut maiores consequatur. Numquam minus rerum error ipsa iure, quae facilis doloremque eligendi?</h1>
+    <div className="w-screen h-screen overflow-hidden">
+      <DndProvider backend={HTML5Backend}>
+        <PokemonContextProvider>
+          <Router>
+            <Routes />
+          </Router>
+        </PokemonContextProvider>
+      </DndProvider>
     </div>
   );
 }

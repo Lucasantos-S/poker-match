@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: Roboto, "Lato", sans-serif;
+  line-height: 1.5;
+  box-sizing: border-box;
+  margin: 0;
+}
+ul,li, a {
+  font-family: 'Press Start 2P', cursive;
+}
+
+button {
+  border: none;
+  margin: 0;
+}
+
+h1 {
+  font-family: "Lato", sans-serif;
+}
+body {
+    line-height: 1;
+}
+ol, ul, li {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
