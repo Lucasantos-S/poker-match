@@ -3,7 +3,7 @@ import { useLottie } from "lottie-react";
 import like from "@/components/Helper/LottieAnimation/Like/like.json";
 
 const style = {
-  height: "30%",
+  height: "100%",
 };
 
 export default function Like() {

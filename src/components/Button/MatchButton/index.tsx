@@ -1,13 +1,16 @@
 import React from "react";
 import { IMatchButtonProps } from "./MatchButton.structure";
+import { usePokemon } from "@/context/PokemonContext";
 
 export default function MatchButton({
   onClick,
   setRefresh,
 }: IMatchButtonProps) {
+  const { setLike } = usePokemon();
   return (
     <button
       onClick={() => {
+      
         onClick();
         setRefresh((refresh) => !refresh);
       }}

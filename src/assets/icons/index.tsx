@@ -23,6 +23,8 @@ import Psychic from "./Psychic";
 import Ground from "./Ground";
 import Poison from "./Poison";
 import Flying from "./Flying";
+import CloseIcon from "./CloseIcon";
+import WeightIcon from "./WeightIcon";
 
 /**
  * @description Component to render all svg icons
@@ -47,6 +49,8 @@ export default function Icons({ size, color, name, onClick }: IIconProps) {
     "Visibility-Of-Icon": <VisibilityOfIcon {...iconsProps} />,
     "Mail-Icon": <MailIcon {...iconsProps} />,
     "Lock-Icon": <LockIcon {...iconsProps} />,
+    "Close-Icon": <CloseIcon {...iconsProps} />,
+    "Weight-Icon": <WeightIcon {...iconsProps} />,
     water: <Water {...iconsProps} />,
     dragon: <Dragon {...iconsProps} />,
     electric: <Electric {...iconsProps} />,

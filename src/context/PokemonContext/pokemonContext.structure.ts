@@ -3,8 +3,10 @@ import { IPokemon } from "pokeapi-typescript";
 export interface IpokemonContext {
   pokemon: IPokemon | null;
   pokedex: IPokedex[];
+  like: boolean 
   setPokemon: React.Dispatch<React.SetStateAction<IPokemon | null>>;
   setPokedex: React.Dispatch<React.SetStateAction<IPokedex[]>>;
+  setLike: React.Dispatch<React.SetStateAction<boolean>>
   handlePokedexMetch: () => void;
   handlePokedexNotMetch: () => void;
   removeMetchFromPokemon: (pokemonId: number) => void;

@@ -71,6 +71,7 @@ export default function MobileProfile() {
     setPokemon(null);
     const randomPokemon = Math.floor(Math.random() * 300) + 1;
     const response = await Pokemon.getPokemon(randomPokemon);
+    console.log(response);
     setPokemon(response);
     setTimeout(() => {
       setLoading(false);
@@ -119,13 +120,13 @@ export default function MobileProfile() {
       </section>
       <div
         ref={dropResNotMetch}
-        className={`w-56 h-full flex items-center bg-transparent border-dashed border-2  absolute top-0 -right-44 z-50   ${
+        className={`w-[500px] h-full flex items-center bg-transparent border-dashed border-2  absolute top-0 -right-[400px] z-50   ${
           isActive ? "opacity-100" : "opacity-0"
         }`}
       ></div>
       <div
         ref={dropRestMetch}
-        className={`w-56 h-full flex items-center bg-white absolute top-0 right-64 z-50   ${
+        className={`w-[500px] h-full flex items-center  bg-transparent border-dashed border-2  absolute top-0 right-52 z-50   ${
           isActiveLike ? "opacity-100" : "opacity-0"
         }`}
       ></div>

@@ -18,7 +18,7 @@ export default function PokemonImage() {
           background: types[handleTypes as SupportedTypes]?.color,
         }}
       ></div>
-      <div className="w-[150px] h-[150px] bg-gray-0 rounded-full shadow-lg absolute z-0 opacity-70"></div>
+      <div className="w-[150px] h-[150px] bg-gray-0 rounded-full shadow-lg absolute z-0 opacity-70 animate-spin"></div>
     </div>
   );
 }
