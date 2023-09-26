@@ -52,6 +52,9 @@ export const types = {
   flying: {
     color: "#89AAE3",
   },
+  poison: {
+    color: "#B567CE",
+  },
 };
 
 export function formatId(id: string) {
@@ -65,4 +68,6 @@ export function formatId(id: string) {
   return id;
 }
 
-
+function handleId() {
+  const randomPokemon = Math.floor(Math.random() * 300) + 1;
+}

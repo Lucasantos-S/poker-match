@@ -11,7 +11,7 @@ export default function Pokedex() {
   const [modal, setModal] = React.useState(false);
   const [modalData, setModalData] = React.useState({} as IPokedex);
   const [environment, setEnvironment] = React.useState(
-    "environment_metch" as StepsType
+    "environment_match" as StepsType
   );
 
   const { pokemon } = usePokemon();
@@ -31,8 +31,8 @@ export default function Pokedex() {
   };
 
   const stepPokedex: IHashSteps = {
-    environment_metch: <PokedexMatchList {...stepPokedexProps} />,
-    environment_notMetch: <PokedexNotMatchList {...stepPokedexProps} />,
+    environment_match: <PokedexMatchList {...stepPokedexProps} />,
+    environment_notMatch: <PokedexNotMatchList {...stepPokedexProps} />,
   };
 
   return (

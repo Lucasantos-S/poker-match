@@ -8,7 +8,7 @@ export default function EnvironmentItem({
   step,
   handleChangeEnvironment,
 }: IEnvironmentMenuProps) {
-  const environmentIsMobile = environment === "environment_metch";
+  const environmentIsMobile = environment === "environment_match";
   return (
     <button
       onClick={() => {

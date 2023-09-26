@@ -24,6 +24,9 @@ export interface IIcons {
   "Lock-Icon": JSX.Element;
   "Close-Icon": JSX.Element;
   "Weight-Icon": JSX.Element;
+  "Match-Icon": JSX.Element;
+  "NotMatch-Icon": JSX.Element;
+  "Control-Icon" : JSX.Element
   water: JSX.Element;
   dragon: JSX.Element;
   electric: JSX.Element;

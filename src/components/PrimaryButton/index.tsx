@@ -10,7 +10,7 @@ export default function PrimaryButton(props: IPrimaryButtonProps) {
   return (
     <button
       disabled={props.disabled}
-      className={`flex justify-center bg-primary py-2 rounded-lg w-full h-10 duration-500 ease-in-out ${buttonDisabled} ${buttonLoading}`}
+      className={`flex justify-center bg-primary py-2 rounded-lg w-full h-10 duration-500 ease-in-out text-gray-0 ${buttonDisabled} ${buttonLoading}`}
     >
       {props.children}
     </button>

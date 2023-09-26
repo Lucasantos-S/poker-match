@@ -5,6 +5,7 @@ import PrimaryButton from "@/components/PrimaryButton";
 import { Controller, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Logo from "@/assets/Logo.png";
+import LoadingLogin from "@/components/Helper/LottieAnimation/LoadingLogin";
 
 export type FormValues = {
   email: string;
@@ -12,6 +13,7 @@ export type FormValues = {
 };
 
 export default function LoginForm() {
+  const [loading, setLoading] = React.useState(false);
   const {
     control,
     handleSubmit,
@@ -23,15 +25,18 @@ export default function LoginForm() {
 
   const buttonIsDisabled = !email || !password;
 
-
   const navigate = useNavigate();
 
   const userEmail = "teste@teste.com";
   const userPassword = "teste";
 
   const onSubmit = (data: FormValues) => {
-    if (data.email === userEmail && data.password === userPassword)
-      navigate("/home");
+    setLoading(true);
+    setTimeout(() => {
+      if (data.email === userEmail && data.password === userPassword)
+        navigate("/home");
+      setLoading(false);
+    }, 2000);
   };
   return (
     <form
@@ -73,9 +78,15 @@ export default function LoginForm() {
             Esqueci minha senha
           </span>
         </main>
-        <footer className="w-[300px] mt-5">
-          <PrimaryButton disabled={buttonIsDisabled}>Fazer Login</PrimaryButton>
-        </footer>
+        {loading ? (
+          <div>{<LoadingLogin />}</div>
+        ) : (
+          <footer className="w-[300px] mt-5">
+            <PrimaryButton disabled={buttonIsDisabled}>
+              Fazer Login
+            </PrimaryButton>
+          </footer>
+        )}
       </section>
     </form>
   );

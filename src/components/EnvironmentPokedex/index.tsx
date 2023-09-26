@@ -7,21 +7,21 @@ export default function EnvironmentPokedex({
   environment,
   handleChangeEnvironment,
 }: IEnvironmentMenuProps) {
-  const environmentIsMobile = environment === "environment_metch";
+  const environmentIsMobile = environment === "environment_match";
 
   return (
     <nav className="flex justify-items-start w-[300px] mt-5 relative">
       <div className="flex gap-11">
         <EnvironmentItem
-          title="Meus pokemons"
+          title="Meus pokémons"
           environment={environment}
-          step={"environment_metch"}
+          step={"environment_match"}
           handleChangeEnvironment={handleChangeEnvironment}
         />
         <EnvironmentItem
           title="Outros"
           environment={environment}
-          step={"environment_notMetch"}
+          step={"environment_notMatch"}
           handleChangeEnvironment={handleChangeEnvironment}
         />
       </div>

@@ -11,7 +11,7 @@ export default function PokedexNotMatchList({
 }: IstepPokedexProps) {
   const { pokedex } = usePokemon();
 
-  const pokedexMetches = React.useMemo(() => {
+  const pokedexMatches = React.useMemo(() => {
     return pokedex.map((pokedex) => {
       if (!pokedex.match)
         return (
@@ -34,7 +34,7 @@ export default function PokedexNotMatchList({
   return (
     <main className="w-full bg-gray-20 rounded-2xl pr-5 py-4 z-50 animate-left">
       <aside className="w-full max-h-[calc(100vh-160px)] h-full flex items-center flex-col gap-4 overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-track-gray-6 scrollbar-thumb-primary-dark scrollbar-thumb-rounded-lg px-10 pb-5 ">
-        {pokedexMetches}
+        {pokedexMatches}
       </aside>
     </main>
   );

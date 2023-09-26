@@ -1,7 +1,7 @@
 import { IPokedex } from "@/context/PokemonContext/pokemonContext.structure";
 import { Dispatch, SetStateAction } from "react";
 
-export type StepsType = "environment_metch" | "environment_notMetch";
+export type StepsType = "environment_match" | "environment_notMatch";
 
 export type IHashSteps = {
   [key in StepsType]: JSX.Element;

@@ -25,6 +25,9 @@ import Poison from "./Poison";
 import Flying from "./Flying";
 import CloseIcon from "./CloseIcon";
 import WeightIcon from "./WeightIcon";
+import MatchIcon from "./Match";
+import NotMatchIcon from "./NotMatch";
+import ControlIcon from "./Control";
 
 /**
  * @description Component to render all svg icons
@@ -51,6 +54,9 @@ export default function Icons({ size, color, name, onClick }: IIconProps) {
     "Lock-Icon": <LockIcon {...iconsProps} />,
     "Close-Icon": <CloseIcon {...iconsProps} />,
     "Weight-Icon": <WeightIcon {...iconsProps} />,
+    "Match-Icon": <MatchIcon {...iconsProps} />,
+    "NotMatch-Icon": <NotMatchIcon {...iconsProps} />,
+    "Control-Icon": <ControlIcon {...iconsProps} />,
     water: <Water {...iconsProps} />,
     dragon: <Dragon {...iconsProps} />,
     electric: <Electric {...iconsProps} />,

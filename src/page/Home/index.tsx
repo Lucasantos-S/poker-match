@@ -3,11 +3,10 @@ import person from "@/assets/person.svg";
 import pokeball from "@/assets/Pokeball.svg";
 import { Outlet } from "react-router-dom";
 import SideMenu from "@/components/SideMenu";
-import Like from "@/components/Helper/LottieAnimation/Like";
+import Like from "@/components/Helper/LottieAnimation/LoadingLogin";
 import { usePokemon } from "@/context/PokemonContext";
 
 export default function Home() {
-
   return (
     <div className="flex justify-center w-screen h-screen relative bg-gradient-to-r from-linear-1 from-10% via-linear-2 via-30% to-linear-3 to-90% py-10">
       <Outlet />
