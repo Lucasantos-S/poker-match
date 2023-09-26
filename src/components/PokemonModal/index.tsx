@@ -14,7 +14,7 @@ export default function PokemonModal({
   const [loading, setLoading] = React.useState(false);
 
   return (
-    <Modal>
+    <Modal setModal={setModal}>
       <div className="relative z-50">
         <button
           className="absolute right-2  text-primary/80 "
@@ -26,7 +26,12 @@ export default function PokemonModal({
       <div className="flex flex-col items-center">
         <PokemonModalHeader pokemon={modalData.pokemon as IPokemon} />
         <PokemonModalMain pokemon={modalData.pokemon as IPokemon} />
-        <PokemonModalFooter loading={loading}  setLoading={setLoading} setModal={setModal} pokedex={modalData}  />
+        <PokemonModalFooter
+          loading={loading}
+          setLoading={setLoading}
+          setModal={setModal}
+          pokedex={modalData}
+        />
       </div>
     </Modal>
   );

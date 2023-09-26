@@ -68,6 +68,6 @@ export function formatId(id: string) {
   return id;
 }
 
-function handleId() {
-  const randomPokemon = Math.floor(Math.random() * 300) + 1;
+export function formatName(name: string) {
+  if (name) return name.charAt(0).toLocaleUpperCase() + name.slice(1);
 }

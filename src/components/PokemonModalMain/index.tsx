@@ -2,7 +2,7 @@ import React from "react";
 import PokemonModalDescription from "../PokemonModalDescription";
 import Icons from "@/assets/icons";
 import { IPokemon } from "pokeapi-typescript";
-import { SupportedTypes, formatId, types } from "@/utils";
+import { SupportedTypes, formatId, formatName, types } from "@/utils";
 import { IIcons } from "@/assets/icons/Icons.structure";
 import { IPokedex } from "@/context/PokemonContext/pokemonContext.structure";
 
@@ -13,9 +13,7 @@ export default function PokemonModalMain({ pokemon }: IPokedex) {
     <main className="w-full  flex flex-col gap-5 ">
       <section className="flex flex-col ">
         <h2 className="text-2xl text-gray-50 font-bold">
-          {pokemon?.name &&
-            pokemon?.name.charAt(0).toLocaleUpperCase() +
-              pokemon?.name.slice(1)}
+          {pokemon?.name && formatName(pokemon?.name)}
         </h2>
         <span className="text-sm text-gray-30 font-semibold">
           #{pokemon?.id && formatId(pokemon?.id.toString())}
@@ -49,19 +47,21 @@ export default function PokemonModalMain({ pokemon }: IPokedex) {
       </section>
       <section className="w-full grid grid-cols-2 gap-5 border-y-[1px] px-2 py-5">
         <PokemonModalDescription
-          title="Altura"
+          title="Peso"
           icon="Weight-Icon"
           description={`${pokemon?.weight && pokemon?.weight / 10} kg`}
         />
         <PokemonModalDescription
-          title="Peso"
-          icon="Weight-Icon"
-          description={`${pokemon?.weight && pokemon?.height / 10} m`}
+          title="Altura"
+          icon="Height-Icon"
+          description={`${pokemon?.height && pokemon?.height / 10} m`}
         />
         <PokemonModalDescription
           title="Habilidade"
-          icon="Weight-Icon"
-          description={pokemon?.abilities[0].ability.name as string}
+          icon="Ability-Icon"
+          description={
+            formatName(pokemon?.abilities[0].ability.name as string) as string
+          }
         />
       </section>
     </main>

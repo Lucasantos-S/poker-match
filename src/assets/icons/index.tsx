@@ -29,7 +29,8 @@ import MatchIcon from "./Match";
 import NotMatchIcon from "./NotMatch";
 import ControlIcon from "./Control";
 import CheckIcon from "./CheckIcon";
-
+import HeightIcon from "./HeightIcon";
+import AbilityIcon from "./Ability-Icon";
 
 /**
  * @description Component to render all svg icons
@@ -60,6 +61,8 @@ export default function Icons({ size, color, name, onClick }: IIconProps) {
     "NotMatch-Icon": <NotMatchIcon {...iconsProps} />,
     "Control-Icon": <ControlIcon {...iconsProps} />,
     "Check-Icon": <CheckIcon {...iconsProps} />,
+    "Height-Icon": <HeightIcon {...iconsProps} />,
+    "Ability-Icon": <AbilityIcon {...iconsProps} />,
     water: <Water {...iconsProps} />,
     dragon: <Dragon {...iconsProps} />,
     electric: <Electric {...iconsProps} />,

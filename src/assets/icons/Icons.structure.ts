@@ -28,6 +28,8 @@ export interface IIcons {
   "NotMatch-Icon": JSX.Element;
   "Control-Icon" : JSX.Element
   "Check-Icon": JSX.Element;
+  "Height-Icon": JSX.Element;
+  "Ability-Icon": JSX.Element;
   water: JSX.Element;
   dragon: JSX.Element;
   electric: JSX.Element;
