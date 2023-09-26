@@ -48,6 +48,7 @@ export default function InputPassword({
       >
         Senha
       </label>
+      <span className="ml-2 text-gray-10">{errorMessage}</span>
       <span
         className="absolute right-4 top-3 cursor-pointer"
         onClick={() =>

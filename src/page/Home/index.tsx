@@ -3,6 +3,8 @@ import person from "@/assets/person.svg";
 import pokeball from "@/assets/Pokeball.svg";
 import { Outlet } from "react-router-dom";
 import SideMenu from "@/components/SideMenu";
+import Like from "@/components/Helper/LottieAnimation/LoadingLogin";
+import { usePokemon } from "@/context/PokemonContext";
 
 export default function Home() {
   return (
@@ -17,7 +19,6 @@ export default function Home() {
       <div className="h-full left-0 absolute z-0">
         <img className="w-full h-full" src={pokeball} alt="" />
       </div>
-      {/* <div className="w-80 h-52 bg-white absolute z-50 rounded-xl shadow-lg top-4 animate-top"></div> */}
     </div>
   );
 }

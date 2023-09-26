@@ -1,6 +1,6 @@
 import React from "react";
 import { usePokemon } from "@/context/PokemonContext";
-import { SupportedTypes, formatId, types } from "@/utils";
+import { SupportedTypes, formatId, formatName, types } from "@/utils";
 import Icons from "@/assets/icons";
 import { IIconProps, IIcons } from "@/assets/icons/Icons.structure";
 import PokemonTypeIcon from "../PokemonTypeIcon";
@@ -17,9 +17,7 @@ export default function PokemonName() {
           #{pokemon?.id && formatId(pokemon?.id.toString())}
         </span>
         <h1 className="text-lg text-gray-50 font-bold">
-          {pokemon?.name &&
-            pokemon?.name.charAt(0).toLocaleUpperCase() +
-              pokemon?.name.slice(1)}
+          {pokemon?.name && formatName(pokemon?.name)}
         </h1>
       </div>
       <div className="h-full flex gap-2 items-center justify-center">

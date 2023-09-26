@@ -52,6 +52,9 @@ export const types = {
   flying: {
     color: "#89AAE3",
   },
+  poison: {
+    color: "#B567CE",
+  },
 };
 
 export function formatId(id: string) {
@@ -65,4 +68,6 @@ export function formatId(id: string) {
   return id;
 }
 
-
+export function formatName(name: string) {
+  if (name) return name.charAt(0).toLocaleUpperCase() + name.slice(1);
+}
