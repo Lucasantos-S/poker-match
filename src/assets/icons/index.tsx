@@ -28,7 +28,8 @@ import WeightIcon from "./WeightIcon";
 import MatchIcon from "./Match";
 import NotMatchIcon from "./NotMatch";
 import ControlIcon from "./Control";
-import CheckIcon from "./checkIcon";
+import CheckIcon from "./CheckIcon";
+
 
 /**
  * @description Component to render all svg icons

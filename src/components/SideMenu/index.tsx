@@ -10,9 +10,11 @@ export default function SideMenu() {
           onClick={() => {
             setIsMenuOpen((isMenuOpen) => !isMenuOpen);
           }}
-          className="w-10 h-10 rounded-full text-lg text-gray-10 "
+          className="w-10 h-10 flex flex-col items-center justify-center gap-1 px-2 rounded-full text-lg text-gray-10 relative "
         >
-          x
+          <span className={`w-full h-[2px] bg-white transition-all ${isMenuOpen && "rotate-45 absolute w-[20px]"}`}></span>
+          <span className={`w-full h-[2px] bg-white transition-all ${isMenuOpen && "hidden"}`}></span>
+          <span className={`w-full h-[2px] bg-white transition-all ${isMenuOpen && "-rotate-45 absolute w-[20px]"}`}></span>
         </button>
       </div>
       {isMenuOpen && (
