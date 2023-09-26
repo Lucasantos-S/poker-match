@@ -5,7 +5,7 @@ export default function Login() {
   return (
     <div className="w-screen h-screen items-center flex justify-between bg-gradient-to-r from-linear-1 from-10% via-linear-2 via-30% to-linear-3 to-90% relative ">
       <LoginForm />
-      <div className="absolute sm:static">
+      <div className="absolute lg:static">
         <img className="w-full" src={imageTeste} alt="" />
       </div>
     </div>

@@ -44,6 +44,7 @@ export default function InputEmail({
       >
         E-mail
       </label>
+      <span className="ml-2 text-gray-10">{errorMessage}</span>
     </div>
   );
 }

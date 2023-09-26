@@ -58,12 +58,29 @@ module.exports = {
           "0%": { transform: "scale(0.5)" },
           "100%": { transform: "scale(1)" },
         },
+        loadingButton: {
+          "0%": {
+            transform: "scale(1) translateY(1)",
+            opacity: 1,
+          },
+
+          "50%": {
+            transform: "scale(1.5) translateY(-1px)",
+            opacity: 0.5,
+          },
+
+          "100%": {
+            transform: "scale(1) translateY(0)",
+            opacity: 1,
+          },
+        },
       },
       animation: {
         left: "left 0.6s forwards",
         form: "left 2s forwards",
         top: "top 0.3s forwards",
         modalOpenCenter: "modalOpenCenter 0.6s forwards ",
+        loadingButton: "loadingButton",
       },
     },
   },
